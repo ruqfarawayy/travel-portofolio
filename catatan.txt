@@ -1,0 +1,2 @@
+install db di .env
+laravel itu membuat tabel menggunakan bahasa inggris
