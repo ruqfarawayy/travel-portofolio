@@ -5,20 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-class TravelPackage extends Model
+class TransactionDetail extends Model
 {
     use SoftDeletes;
     use HasFactory;
     protected $fillable = [
-        'title', 'slug', 'location', 'about', 'featured_event',
-        'language', 'foods', 'departure_date', 'duration', 'type', 'price'
+        'transactions_id', 'username', 'nationality', 'is_visa', 'doe_passport'
     ];
 
     protected $hidden = [
 
     ];
 
-    public function galleries(){
-        return $this->hasMany(Gallery::class,'travel_packages_id', 'id');
+
+    public function transaction(){
+        return $this->belongsTo(Transaction::class, 'transactions_id', 'id');
     }
+
+
 }
